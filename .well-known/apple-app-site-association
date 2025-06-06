@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "C3WJ5XUBS3.com.BenJenkins.GroceryGuru",
+        "paths": [ "/invite/*" ]
+      }
+    ]
+  }
+}
