@@ -8,6 +8,10 @@
         {
           "key": "Content-Type",
           "value": "application/json"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": ""
         }
       ]
     }
@@ -18,7 +22,7 @@
       "destination": "/reset-fallback"
     },
     {
-      "source": "/reset/(.*)", 
+      "source": "/reset/(.*)",
       "destination": "/reset-fallback"
     }
   ]
