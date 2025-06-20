@@ -12,16 +12,14 @@
       ]
     }
   ],
-  "redirects": [
+  "rewrites": [
     {
       "source": "/invite/(.*)",
-      "destination": "/reset-fallback",
-      "statusCode": 200
+      "destination": "/reset-fallback"
     },
     {
       "source": "/reset/(.*)", 
-      "destination": "/reset-fallback",
-      "statusCode": 200
+      "destination": "/reset-fallback"
     }
   ]
 }
