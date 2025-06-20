@@ -8,10 +8,6 @@
         {
           "key": "Content-Type",
           "value": "application/json"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": ""
         }
       ]
     }
