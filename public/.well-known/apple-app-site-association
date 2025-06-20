@@ -4,8 +4,38 @@
     "details": [
       {
         "appID": "C3WJ5XUBS3.com.BenJenkins.GroceryGuru",
-        "paths": [ "/invite/*" ]
+        "paths": [ "/invite/*", "/reset/*" ]
       }
     ]
   }
 }
+
+/*
+WORKFLOW SUMMARY:
+================
+
+INVITATION FLOW:
+1. User receives invitation → clicks https://links.getgroceryguru.com/invite/CODE
+2. iOS sees /invite/* in this file → opens GroceryGuru app directly
+3. MainContentView.handleIncomingURL() receives groceryguru://invite/CODE
+4. InviteOnboardingManager validates code via Edge Function
+5. User proceeds to InvitationClaimView → AuthenticationView
+
+PASSWORD RESET FLOW:
+1. User requests reset → receives email with https://links.getgroceryguru.com/reset/SESSION_ID
+2. iOS sees /reset/* in this file → opens GroceryGuru app directly  
+3. MainContentView.handleIncomingURL() receives groceryguru://reset/SESSION_ID
+4. ResetPasswordManager.fetchResetToken() exchanges session_id for reset_token via Edge Function
+5. User sees ResetPasswordView modal to set new password
+
+DEPLOYMENT:
+- This file lives in gg-universal-links repo
+- Must be accessible at: https://links.getgroceryguru.com/.well-known/apple-app-site-association
+- Changes require redeployment of gg-universal-links to take effect
+- iOS caches this file, so changes may take time to propagate
+
+TESTING NOTES:
+- Universal Links only work on physical devices (not Simulator)
+- TestFlight is required for proper end-to-end testing
+- For preliminary testing, manually trigger deep links in app
+*/
