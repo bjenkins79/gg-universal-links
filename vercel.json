@@ -15,12 +15,12 @@
   "redirects": [
     {
       "source": "/invite/(.*)",
-      "destination": "/reset-fallback.html",
+      "destination": "/reset-fallback",
       "statusCode": 200
     },
     {
       "source": "/reset/(.*)", 
-      "destination": "/reset-fallback.html",
+      "destination": "/reset-fallback",
       "statusCode": 200
     }
   ]
