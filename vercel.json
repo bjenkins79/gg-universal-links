@@ -1,9 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  
-  // Ensure Apple App Site Association file is served with correct MIME type
-  // Required for iOS Universal Links to recognize the domain
   "headers": [
     {
       "source": "/.well-known/apple-app-site-association",
@@ -15,10 +12,6 @@
       ]
     }
   ],
-  
-  // Route dynamic Universal Links paths to existing fallback page
-  // This ensures iOS gets HTTP 200 response before intercepting with Universal Links
-  // All /invite/* and /reset/* URLs will serve the same fallback content
   "rewrites": [
     {
       "source": "/invite/(.*)",
